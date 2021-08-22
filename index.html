@@ -6,6 +6,16 @@
 	list-style-position: inside;}
 	body {text-align: center;}
 </style>
+<script src="magic.js"></script>    
+<script src="ball.js"></script>
+<script>
+var cnt = 0
+while (cnt < data.length){
+    var pnt = data[cnt];
+    create(pnt.x, pnt.y, pnt.color);
+    cnt = cnt +1;
+}
+</script>
 </head>
 <body>
 <div id="ball" style="z-index:5;position:absolute;left:0px;top:0px;width:25px;height:25px;border-radius:50%"></div>
@@ -35,6 +45,8 @@
 			<li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
 			<li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
 		</ul>
+	<br><Button id="showpaint" onClick="">Surprise from Week 2!</button>
+	<div id="painting"></div>
 </body>
 <script>
 var velocity = 50;
