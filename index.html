@@ -42,15 +42,16 @@ var position = 0;
 var ball = document.getElementById('ball');
 
 function myFunction(){
-    var w = window.innerWidth; var we = w + 25;
-    var h = window.innerHeight; var wh = h + 25;
+    var w = window.innerWidth; var edgew = w + 25;
+    var h = window.innerHeight; var edgeh = h + 25;
     var r = Math.floor(Math.random() * 256);
     var g = 100+ Math.floor(Math.random() * 256);
     var b = 50+ Math.floor(Math.random() * 256);
     var bgColor = "rgb(" + r + "," + g + "," + b + ")";
     ball.style.background = bgColor;
 		position = position + velocity; ball.style.left = position + 'px';
-		if(position >= we){ball.style.left = '0px'; position = 1;}
+			if(position >=edgew){velocity = -50;}
+			if(position <= 1){velocity = 50;}
 	}
 
 setInterval(myFunction, 300);
