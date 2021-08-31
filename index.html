@@ -5,13 +5,19 @@
 	ul {text-align: center;
 	list-style-position: inside;}
 	body {text-align: center;}
+	img {opacity: 0.5;}
+	img:hover {opacity: 1.0;}
+.ball {
+  border-radius: 50%;
+  position: absolute;
+}
 </style>
 </head>
 <body>
 <div id="ball" style="z-index:5;position:absolute;left:0px;top:0px;width:25px;height:25px;border-radius:50%"></div>
 	
-    <h1><img src = "BioPic.jpg" style="height: 100px; width: 100px; margin-right: 20px;"/>Hello New Programmers World! Welcome to Ryan Bouchard's Portfolio 
-	    <img src="programming-crazy.gif" style="margin-left: 20px;"></h1>
+    <h1><img src = "BioPic.jpg" style="height: 100px; width: 100px; margin-right: 20px; opacity: 1.0;"/>Hello New Programmers World! Welcome to Ryan Bouchard's Portfolio 
+	    <img src="programming-crazy.gif" style="margin-left: 20px; opacity: 1.0;"></h1>
 	<p>As we advance through the material in the course, this page will be modified to show new content!</p>	            
         <p>This weeks assignment was to create a basic website with some tags for headers and paragraphs, links, images and lists! You are currerntly reading the p tag element
              of the website which when used will create a new paragraph! Now if you want to just insert a line break of part of the paragraph you can use the br tag <br> 
@@ -23,11 +29,11 @@
             <a href="https://tenor.com/view/programming-crazy-hard-typing-mad-gif-7866344" target="_blank">CLICK ME!</a></p>
 
                 <h1>Favorite Foods And Music to Program to!</h1>
-                    <A href="https://bc.pizza/" target="_blank"><img src="bc-pizza-logo-2x.png" style="height: 10%;width: 10%;"></A>
-                    <A href="https://www.pandaexpress.com/" target="_blank"><img src="1200px-Panda_Express_logo.svg.png" style="height: 7%;width: 7%;"></A>               
-                    <A href="https://slipknot1.com/" target="_blank"><img src="sk-logo-red.0a2db178.png" style="height: 10%;width: 10%;"></A>
+                    <A href="https://bc.pizza/" target="_blank"><img src="bc-pizza-logo-2x.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
+                    <A href="https://www.pandaexpress.com/" target="_blank"><img src="1200px-Panda_Express_logo.svg.png" style="height: 7%;width: 7%; opacity: 1.0;"></A>               
+                    <A href="https://slipknot1.com/" target="_blank"><img src="sk-logo-red.0a2db178.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
                     <A href="https://www.linkinpark.com/?frontpage=true&intcmp=201008/lpark/wr/spl/hp/but/bdy/ww/hybrid-theory-20th-anniv-merch-enter-site" 
-                        target="_blank"><img src="linkin-park-logo-500x282.png" style="height: 10%;width: 10%;"></A>
+                        target="_blank"><img src="linkin-park-logo-500x282.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
 	
 	<p>Interested in learning more about web development? Feel free to click on any of the below links for more information!</p>
 		<ul>
@@ -35,25 +41,47 @@
 			<li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
 			<li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
 		</ul>
+
+<img src="canon.png" title="FIRE THE CANON!" style="height: 125px; width: 125px; position: absolute; left: 0; bottom: 0; background-color: transparent;" onclick="fireCanon();"/>
+
+
 </body>
 <script>
-var velocity = 50;
-var position = 0;
-var ball = document.getElementById('ball');
+var velX = 3;
+var velY = -1;
+var i = 1;
+var els = document.getElementsByClassName("ball");
+function fireCanon() {	
+	if (els.length > 0){
+		for (e = 0; e <= els.length; e++){
+			els[e].remove(); velX = 3; velY = -1;}
+		}
+    	var bgColor = "rgb(" + Math.floor(Math.random() * 256) + "," + (100 + Math.floor(Math.random() * 256)) + "," + (50 + Math.floor(Math.random() * 256)) + ")";
+  		ball = document.createElement("div");
+  		ball.style.backgroundColor = bgColor;
+  		ball.className = "ball";
+		ball.id = "ball" + i;
+  		ball.style.height = "20px"; ball.style.width = "20px";
+  		ball.style.bottom = "80px"; ball.style.left = "118px";
+  		ball.style.border= "solid";
+  		document.body.appendChild(ball);i++;
+}
+function moveBall(){
+    	var edgew = window.innerWidth - 25;
+    	var edgeh = window.innerHeight -25;
+	var els = document.getElementsByClassName("ball");
+	var c;
+	for (c = 0; c <= els.length; c++){
+		let posX = els[c].offsetLeft; let posY = els[c].offsetTop;
+		posX = posX + velX; posY = posY +velY;
+		els[c].style.left = posX + 'px'; els[c].style.top = posY + 'px';  
+			if(els[c].offsetLeft >= edgew|| els[c].offsetLeft <= 1){velX = velX * -1;};
+			if(els[c].offsetTop >= edgeh|| els[c].offsetTop <= 1){velY  = velY  * -1;};
+	}	
+}
 
-function myFunction(){
-    var edgew = window.innerWidth - 25;
-    var edgeh = window.innerHeight - 25;
-    var r = Math.floor(Math.random() * 256);
-    var g = 100+ Math.floor(Math.random() * 256);
-    var b = 50+ Math.floor(Math.random() * 256);
-    var bgColor = "rgb(" + r + "," + g + "," + b + ")";
-    ball.style.background = bgColor;
-		position = position + velocity; ball.style.left = position + 'px';
-			if(position >=edgew){velocity = -50;}
-			if(position <= 1){velocity = 50;}
-	}
 
-setInterval(myFunction, 300);
+setInterval(moveBall, 1);
+
 </script>
 </html>
