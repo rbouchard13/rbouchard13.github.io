@@ -47,15 +47,11 @@
 
 </body>
 <script>
-var velX = 3;
-var velY = -1;
+var velX = {};
+var velY = {};
 var i = 1;
-var els = document.getElementsByClassName("ball");
-function fireCanon() {	
-	if (els.length > 0){
-		for (e = 0; e <= els.length; e++){
-			els[e].remove(); velX = 3; velY = -1;}
-		}
+function fireCanon() {if (i > 25){alert("You have reached the maximum number of allowable canon balls for this page!")};	
+	velX[i] = 3; velY[i] = -1;
     	var bgColor = "rgb(" + Math.floor(Math.random() * 256) + "," + (100 + Math.floor(Math.random() * 256)) + "," + (50 + Math.floor(Math.random() * 256)) + ")";
   		ball = document.createElement("div");
   		ball.style.backgroundColor = bgColor;
@@ -67,16 +63,16 @@ function fireCanon() {
   		document.body.appendChild(ball);i++;
 }
 function moveBall(){
-    	var edgew = window.innerWidth - 25;
-    	var edgeh = window.innerHeight -25;
 	var els = document.getElementsByClassName("ball");
-	var c;
-	for (c = 0; c <= els.length; c++){
-		let posX = els[c].offsetLeft; let posY = els[c].offsetTop;
-		posX = posX + velX; posY = posY +velY;
-		els[c].style.left = posX + 'px'; els[c].style.top = posY + 'px';  
-			if(els[c].offsetLeft >= edgew|| els[c].offsetLeft <= 1){velX = velX * -1;};
-			if(els[c].offsetTop >= edgeh|| els[c].offsetTop <= 1){velY  = velY  * -1;};
+	if( els.length > 0){
+    	var edgew = window.innerWidth - 26; var edgeh = window.innerHeight -26;
+	var c; 
+	for (c = 1; c <= i; c++){
+		var posX = document.getElementById("ball" + c).offsetLeft; posX = posX + velX[c]; document.getElementById("ball" + c).style.left = posX +'px';
+		var posY = document.getElementById("ball" + c).offsetTop; posY = posY + velY[c]; document.getElementById("ball" + c).style.top = posY +'px';
+			if (posX >= edgew || posX <= 1){velX[c] = velX[c] * -1;}
+			if (posY >= edgeh || posY <= 1){velY[c] = velY[c] * -1;}
+		}
 	}	
 }
 
