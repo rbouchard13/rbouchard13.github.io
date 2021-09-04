@@ -12,23 +12,51 @@
   position: absolute;
 }
 </style>
+<script>
+var pos = 0; 
+var direction = 0;
+var focus = 0;
+const pacArray = [
+  ['./PacMan1.png', './PacMan2.png'],
+  ['./PacMan3.png', './PacMan4.png'],
+];
+
+function Run() {
+	let pageWidth = window.innerWidth;
+ 	let img = document.getElementById('PacMan');
+  	let imgWidth = img.width;
+  	focus = (focus + 1) % 2;
+  	direction = checkPageBounds(direction, imgWidth, pos, pageWidth);
+  	img.src = pacArray[direction][focus];
+  		if (direction) {
+    			pos -= 20;
+    			img.style.left = pos + 'px';
+  		} else {
+    			pos += 20;
+    			img.style.left = pos + 'px';
+  		}
+	}
+
+function checkPageBounds(direction, imgWidth, pos, pageWidth) {
+	if (pos >= pageWidth - imgWidth - 5){direction = 1;}
+	if (pos <= 0){direction = 0;}
+  return direction;
+}
+
+setInterval(Run,200);
+
+</script>
 </head>
 <body>
-<div id="ball" style="z-index:5;position:absolute;left:0px;top:0px;width:25px;height:25px;border-radius:50%"></div>
+<img id="PacMan" src="/PacMan1.png" width='50' style="position:absolute; opacity: 1.0;"></img>
 	
     <h1><img src = "BioPic.jpg" style="height: 100px; width: 100px; margin-right: 20px; opacity: 1.0;"/>Hello New Programmers World! Welcome to Ryan Bouchard's Portfolio 
 	    <img src="programming-crazy.gif" style="margin-left: 20px; opacity: 1.0;"></h1>
 	<p>As we advance through the material in the course, this page will be modified to show new content!</p>	            
-        <p>This weeks assignment was to create a basic website with some tags for headers and paragraphs, links, images and lists! You are currerntly reading the p tag element
-             of the website which when used will create a new paragraph! Now if you want to just insert a line break of part of the paragraph you can use the br tag <br> 
-            <strong>and it will move<br>your text to the<br>next line</strong></p>
-        <p> This is a new P tag element! If you want to access the gif image loaded into this page, click on the below link! Note that if you want to have
-             the link open in a new tab you 
-            should include the target="_blank" within your A tag.
             <br>
-            <a href="https://tenor.com/view/programming-crazy-hard-typing-mad-gif-7866344" target="_blank">CLICK ME!</a></p>
+            <a href="https://tenor.com/view/programming-crazy-hard-typing-mad-gif-7866344" target="_blank">CLICK HERE</a> to get you own copy of the mad programmer gif above!</p>
 
-                <h1>Favorite Foods And Music to Program to!</h1>
+                <h1>Favorite Foods And Music I Enjoy While Programming!</h1>
                     <A href="https://bc.pizza/" target="_blank"><img src="bc-pizza-logo-2x.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
                     <A href="https://www.pandaexpress.com/" target="_blank"><img src="1200px-Panda_Express_logo.svg.png" style="height: 7%;width: 7%; opacity: 1.0;"></A>               
                     <A href="https://slipknot1.com/" target="_blank"><img src="sk-logo-red.0a2db178.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
@@ -42,7 +70,7 @@
 			<li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
 		</ul>
 
-<img src="canon.png" title="FIRE THE CANON! Week 2 and 3 animations and variables!" style="height: 125px; width: 125px; position: absolute; left: 0; bottom: 0; background-color: transparent;" onclick="fireCanon();"/>
+<img src="canon.png" title="FIRE THE CANON!" style="height: 125px; width: 125px; position: absolute; left: 0; bottom: 0; background-color: transparent;" onclick="fireCanon();"/>
 
 
 </body>
