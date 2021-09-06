@@ -38,7 +38,7 @@ function Run() {
 	}
 
 function checkPageBounds(direction, imgWidth, pos, pageWidth) {
-	if (pos >= pageWidth - imgWidth - 6){direction = 1;}
+	if (pos >= pageWidth - imgWidth - 10){direction = 1;}
 	if (pos <= 0){direction = 0;}
   return direction;
 }
@@ -78,7 +78,7 @@ setInterval(Run,200);
 var velX = {};
 var velY = {};
 var i = 1;
-function fireCanon() {if (i > 25){alert("You have reached the maximum number of allowable canon balls for this page!")};	
+function fireCanon() {if (i > 25){alert("You have reached the maximum number of allowable canon balls for this page!"); return;};	
 	velX[i] = 3; velY[i] = -1;
     	var bgColor = "rgb(" + Math.floor(Math.random() * 256) + "," + (100 + Math.floor(Math.random() * 256)) + "," + (50 + Math.floor(Math.random() * 256)) + ")";
   		ball = document.createElement("div");
