@@ -95,7 +95,7 @@ function moveBall(){
 	if( els.length > 0){
     	var edgew = window.innerWidth - 26; var edgeh = window.innerHeight -26;
 	var c; 
-	for (c = 1; c <= i; c++){
+	for (c = 1; c < i; c++){
 		var posX = document.getElementById("ball" + c).offsetLeft; posX = posX + velX[c]; document.getElementById("ball" + c).style.left = posX +'px';
 		var posY = document.getElementById("ball" + c).offsetTop; posY = posY + velY[c]; document.getElementById("ball" + c).style.top = posY +'px';
 			if (posX >= edgew || posX <= 1){velX[c] = velX[c] * -1;}
