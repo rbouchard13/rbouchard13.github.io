@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+<script src="Port.js"></script>
 <style>
     	li {text-align: center;}
 	ul {text-align: center;
@@ -12,56 +13,22 @@
   position: absolute;
 }
 </style>
-<script>
-var pos = 0; 
-var direction = 0;
-var focus = 0;
-const pacArray = [
-  ['./PacMan1.png', './PacMan2.png'],
-  ['./PacMan3.png', './PacMan4.png'],
-];
-
-function Run() {
-	let pageWidth = window.innerWidth;
- 	let img = document.getElementById('PacMan');
-  	let imgWidth = img.width;
-  	focus = (focus + 1) % 2;
-  	direction = checkPageBounds(direction, imgWidth, pos, pageWidth);
-  	img.src = pacArray[direction][focus];
-  		if (direction) {
-    			pos -= 20;
-    			img.style.left = pos + 'px';
-  		} else {
-    			pos += 20;
-    			img.style.left = pos + 'px';
-  		}
-	}
-
-function checkPageBounds(direction, imgWidth, pos, pageWidth) {
-	if (pos >= pageWidth - imgWidth - 10){direction = 1;}
-	if (pos <= 0){direction = 0;}
-  return direction;
-}
-
-setInterval(Run,200);
-
-</script>
 </head>
 <body>
-<img id="PacMan" src="/PacMan1.png" width='50' style="position:absolute; opacity: 1.0;"></img>
+<img id="PacMan" src="images/PacMan1.png" width='50' style="position:absolute; opacity: 1.0;"></img>
 	
-    <h1><img src = "BioPic.jpg" style="height: 100px; width: 100px; margin-right: 20px; opacity: 1.0;"/>Hello New Programmers World! Welcome to Ryan Bouchard's Portfolio 
-	    <img src="programming-crazy.gif" style="margin-left: 20px; opacity: 1.0;"></h1>
+    <h1><img src = "/images/BioPic.jpg" style="height: 100px; width: 100px; margin-right: 20px; opacity: 1.0;"/>Hello New Programmers World! Welcome to Ryan Bouchard's Portfolio 
+	    <img src="/images/programming-crazy.gif" style="margin-left: 20px; opacity: 1.0;"></h1>
 	<p>As we advance through the material in the course, this page will be modified to show new content! Feel free to fire the canon at the bottom!</p>	            
             <br>
             <a href="https://tenor.com/view/programming-crazy-hard-typing-mad-gif-7866344" target="_blank">CLICK HERE</a> to get you own copy of the mad programmer gif above!</p>
 
                 <h1>Favorite Foods And Music I Enjoy While Programming!</h1>
-                    <A href="https://bc.pizza/" target="_blank"><img src="bc-pizza-logo-2x.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
-                    <A href="https://www.pandaexpress.com/" target="_blank"><img src="1200px-Panda_Express_logo.svg.png" style="height: 7%;width: 7%; opacity: 1.0;"></A>               
-                    <A href="https://slipknot1.com/" target="_blank"><img src="sk-logo-red.0a2db178.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
+                    <A href="https://bc.pizza/" target="_blank"><img src="/images/bc-pizza-logo-2x.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
+                    <A href="https://www.pandaexpress.com/" target="_blank"><img src="images/1200px-Panda_Express_logo.svg.png" style="height: 7%;width: 7%; opacity: 1.0;"></A>               
+                    <A href="https://slipknot1.com/" target="_blank"><img src="images/sk-logo-red.0a2db178.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
                     <A href="https://www.linkinpark.com/?frontpage=true&intcmp=201008/lpark/wr/spl/hp/but/bdy/ww/hybrid-theory-20th-anniv-merch-enter-site" 
-                        target="_blank"><img src="linkin-park-logo-500x282.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
+                        target="_blank"><img src="/images/linkin-park-logo-500x282.png" style="height: 10%;width: 10%; opacity: 1.0;"></A>
 	
 	<p>Interested in learning more about web development? Feel free to click on any of the below links for more information!</p>
 		<ul>
@@ -70,42 +37,8 @@ setInterval(Run,200);
 			<li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
 		</ul>
 
-<img src="canon.png" title="FIRE THE CANON!" style="height: 125px; width: 125px; position: absolute; left: 0; bottom: 0; background-color: transparent;" onclick="fireCanon();"/>
+<img src="images/canon.png" title="FIRE THE CANON!" style="height: 125px; width: 125px; position: absolute; left: 0; bottom: 0; background-color: transparent;" onclick="fireCanon();"/>
 
 
 </body>
-<script>
-var velX = {};
-var velY = {};
-var i = 1;
-function fireCanon() {if (i > 25){alert("You have reached the maximum number of allowable canon balls for this page!"); return;};	
-	velX[i] = 3; velY[i] = -1;
-    	var bgColor = "rgb(" + Math.floor(Math.random() * 256) + "," + (100 + Math.floor(Math.random() * 256)) + "," + (50 + Math.floor(Math.random() * 256)) + ")";
-  		ball = document.createElement("div");
-  		ball.style.backgroundColor = bgColor;
-  		ball.className = "ball";
-		ball.id = "ball" + i;
-  		ball.style.height = "20px"; ball.style.width = "20px";
-  		ball.style.bottom = "80px"; ball.style.left = "118px";
-  		ball.style.border= "solid";
-  		document.body.appendChild(ball);i++;
-}
-function moveBall(){
-	var els = document.getElementsByClassName("ball");
-	if( els.length > 0){
-    	var edgew = window.innerWidth - 26; var edgeh = window.innerHeight -26;
-	var c; 
-	for (c = 1; c < i; c++){
-		var posX = document.getElementById("ball" + c).offsetLeft; posX = posX + velX[c]; document.getElementById("ball" + c).style.left = posX +'px';
-		var posY = document.getElementById("ball" + c).offsetTop; posY = posY + velY[c]; document.getElementById("ball" + c).style.top = posY +'px';
-			if (posX >= edgew || posX <= 1){velX[c] = velX[c] * -1;}
-			if (posY >= edgeh || posY <= 1){velY[c] = velY[c] * -1;}
-		}
-	}	
-}
-
-
-setInterval(moveBall, 1);
-
-</script>
 </html>
