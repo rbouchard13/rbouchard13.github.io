@@ -15,7 +15,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGhlZGFkYXMxMzEzIiwiYSI6ImNrdXNrOXdwbTB3M2Uyb
   		container: 'map',
   		style: 'mapbox://styles/mapbox/dark-v10',
   		center: [-71.104081, 42.365554],
-  		zoom: 14,
+  		zoom: 10,
 	});
   	addMarkers();
 }
