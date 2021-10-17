@@ -21,7 +21,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGhlZGFkYXMxMzEzIiwiYSI6ImNrdXNrOXdwbTB3M2Uyb
 }
 async function addMarkers(){
 	var route = document.getElementById("routes").value;
-	if (route === "")
+	if (route === "" || route.toLowerCase() ==="all")
 		{url = 'https://api-v3.mbta.com/vehicles?&include=trip';}
 	else
 		{url = 'https://api-v3.mbta.com/vehicles?&filter[route]=' + route + '&include=trip';}	
