@@ -9,7 +9,6 @@ function updateUrl(){
 	addMarkers();
 }
 function init(){
-//url = 'https://api-v3.mbta.com/vehicles?&include=trip'; //place before include to set specific route    filter[route]=1&
 mapboxgl.accessToken = 'pk.eyJ1IjoidGhlZGFkYXMxMzEzIiwiYSI6ImNrdXNrOXdwbTB3M2Uybm82d2V1bXljbjgifQ.Qk2kDT-hQODQFqGghcr4lQ';
 	var element = document.getElementById('map');
 	map = new mapboxgl.Map({
@@ -52,6 +51,15 @@ function addMarker(bus){
 	})
 	marker.setLngLat([bus.attributes.longitude, bus.attributes.latitude]);
 	marker._element.id = bus.id;
+	var popup = new mapboxgl.Popup({
+		offset: 25,
+		id: popup})
+		.setHTML("<strong>Bus ID#: " + bus.id +
+		"<br>Route #: " + bus.relationships.route.data.id +
+		"<br>Status: " + bus.attributes.current_status + " To Stop " + bus.attributes.current_stop_sequence +
+		"<br>Occupancy: " + bus.attributes.occupancy_status + 
+		"</strong>");
+	marker.setPopup(popup);
 	marker.addTo(map);
 	markers.push(marker);
 }
