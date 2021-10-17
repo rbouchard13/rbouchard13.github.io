@@ -8,10 +8,15 @@ body {
   	bottom: 0;
  	width: 100%;
 }
-
 .map-overlay {
   	position: absolute;
   	left: 0;
   	padding: 10px;
+}
+.mapboxgl-popup{
+	Width: auto;
+	height: auto;
+	cursor: pointer;
+	font-family: "Times New Roman", Times, serif;
 }
 
