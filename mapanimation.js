@@ -65,9 +65,9 @@ function addMarker(bus){
 }
 function getIcon(bus){
 	if (bus.attributes.direction_id === 0) {
-		return '#f54842';
+		return '#18fc03';
 	}
-	return '#18fc03';	
+	return '#f54842';	
 }
 function moveMarker(marker,bus) {
 	var icon =  getIcon(bus);
