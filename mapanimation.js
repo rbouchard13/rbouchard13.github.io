@@ -55,7 +55,7 @@ function addMarker(bus){
 		offset: 25,
 		id: popup})
 		.setHTML("<strong>Bus ID#: " + bus.id +
-		"<br>Route #: " + bus.relationships.route.data.id +
+		"<br><a href='https://www.mbta.com/schedules/" + bus.relationships.route.data.id + "/line'>Route #: " + bus.relationships.route.data.id + "</a>" +
 		"<br>Status: " + bus.attributes.current_status + " To Stop " + bus.attributes.current_stop_sequence +
 		"<br>Occupancy: " + bus.attributes.occupancy_status + 
 		"</strong>");
