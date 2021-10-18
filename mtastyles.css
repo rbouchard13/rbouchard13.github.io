@@ -19,4 +19,6 @@ body {
 	cursor: pointer;
 	font-family: "Times New Roman", Times, serif;
 }
-
+.mapboxgl-marker{
+	cursor: pointer;
+}
