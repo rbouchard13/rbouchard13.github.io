@@ -71,7 +71,7 @@ function getIcon(bus){
 }
 function moveMarker(marker,bus) {
 	var icon =  getIcon(bus);
-	marker._color = icon;
+	marker._element.firstChild.parentElement.style.color = icon;
 	marker.setLngLat([bus.attributes.longitude, bus.attributes.latitude]);	
 }
 function getMarker(id){
