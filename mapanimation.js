@@ -63,6 +63,9 @@ function addMarker(bus){
 	markers.push(marker);
 }
 function getColor(bus){
+	if (bus.attributes.current_status == "STOPPED_AT"){
+		return '#e31009';
+	}
 	if (bus.attributes.direction_id === 0) {
 		return '#18fc03';
 	}
