@@ -1,0 +1,113 @@
+body {
+	background-image: url(images/Bright-Green-Abstract-Black-Background-Wallpaper-28265.jpg);
+}
+
+span {
+	font-family: 'Acme', sans-serif;
+}
+
+h1 {
+	font-family: 'Acme', sans-serif;
+}
+
+.card-header {
+	color: black;
+}
+
+.card-body {
+	height: 150px;
+}
+
+.sidenav {
+  	height: 100vh;
+  	width: 0;
+  	position: fixed; 
+  	z-index: 1; 
+  	top: 0; 
+  	left: 0;
+  	background-color: #000;
+  	overflow-x: hidden; 
+  	padding-top: 60px;
+  	transition: 0.5s;
+}
+
+.sidenav span {
+  	padding: 8px 8px 8px 32px;
+  	text-decoration: none;
+  	font-size: 25px;
+  	color: #41eb23;
+  	display: block;
+  	transition: 0.3s;
+	cursor: pointer;
+}
+
+.sidenav span:hover {
+  	color: #8803fc;
+}
+
+.sidenav .closebtn {
+  	position: absolute;
+  	top: 0;
+  	right: 25px;
+  	font-size: 36px;
+  	margin-left: 50px;
+}
+
+.main {
+  	transition: margin-left .5s;
+  	padding: 10px;
+	text-align: center;
+	height: 100vh;
+	color: white;
+}
+
+#projects, #contact {
+	display: none;
+}
+
+@media screen and (max-height: 450px) {
+  	.sidenav {padding-top: 15px;}
+  	.sidenav a {font-size: 18px;}
+}
+
+.eyes {
+      position: relative;
+      margin-top: 30px;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+}
+.eye {
+      width: 60px;
+      height: 30px;
+      background: #fff;
+      display: inline-block;
+      margin: 20px;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+}
+.ball {
+      width: 20px;
+      height: 20px;
+      background: #000;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+}
+
+li {
+	text-align: center;
+}
+
+ul {
+	text-align: center;
+	list-style-position: inside;
+}
+
+img {
+	opacity: 0.5;
+}
+img:hover {opacity: 1.0;}
