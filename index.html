@@ -11,71 +11,69 @@
 	<script src="Port.js"></script>
 </head>
 <body>
-	<img src="images/15720.png" style="background-color: transparent; opacity: 1.0; padding: 20px; cursor: pointer;" onClick="show('main')" title="Go To Home"/>
+	<img src="images/15720.png" style="background-color: transparent; opacity: 1.0; padding: 20px; cursor: pointer;" onClick='show("main")' title="Go To Home"/>
 	<span style="font-size: 20px;cursor:pointer; padding: 20px; color: #41eb23;" onclick="openNav()">&#9776; Menu</span>
 	<div id="mySidenav" class="sidenav">
   		<Span class="closebtn" onclick="closeNav()">&times;</span>
-		<span onclick="show('main')">Home</span>
-		<span onClick="show('projects')">Projects</span>
-		<span onClick="show('contact')">Contact</span>
+		<span onclick='show("main")'>Home</span>
+		<span onClick='show("projects")'>Projects</span>
+		<span onClick='show("contact")'>Contact</span>
 	</div>
 	<div id="main" class="main" onClick="ckMenu()">			
     		<h1>Hello World!</h1>   
-		<p>Welcome to the portfolio! I need to add some misc stuff to this i guess..........<br><br>Self taught........yada yada. More updates to come</p>
+		<div id="bio">
+			Welcome to the portfolio! My name is Ryan. To explain why this site exists, you may need some background.......<br><br>
+			There used to be an operating system called Windows 98. This OS thrived around the time I was studying Philosophy in college. For obvious reasons, I needed a device to assist with my studies.
+			So, I got myself a computer! And then it happened............I found the web.......<br><br>
+			I was captivated at this technology that could connect people from different sides of the world. A program that could bring knowledge to and education to the entire world! 
+			And so, it began. I started teaching myself everything I could about this fascinating technology. Learning how to program it, and of course break it! And this continued for decades after. 
+			Self-teaching multiple languages including HTML, JavaScript, CSS, SQL, VBS (Classic ASP) and others. And then it happened. While working in a non tech role, I was asked if I could help with some techy things!
+			What was once just a passion and hobby, turned into a possible career path. I currently work as a <a href="https://www.scaledagileframework.com/" target="_blank">SAFe Product Owner</a> 
+			and would love to transition to a full Product Development role. So why are you here and why would you consider me for an opportunity? Because after decades, 
+			I still have just as much passion for the field as I did when I wrote my first Hello World Program!
+		</div>
 		<div id="medPlayer">
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/kXYiU_JCYtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 	</div>
 	<div id="projects" class="main" onClick="ckMenu()">
-		<h1>Projects</h1>Click the image to view in browser or to view the GitHub Repository click the GutHub logo
-		<div class="container">
-  			<div class="row align-items-start">
-				<div class="col">
-					<div class="container">
-  						<div class="card">
-    							<div class="card-header"><span>Weather Snooper</span></div>
-    							<div class="card-body"><a href="https://rbouchard13.github.io/weather_snooper" target="_blank"><img src="images/weathersnooper.jpg" style="width: 100%; opacity: 1.0;"/></div> 
-    							<div class="card-footer"><a href="https://github.com/rbouchard13/weather_snooper" target="_blank"><img src="images/git.png" style="width: 30%; opacity: 1.0;" title="View GitHub Repo"/></a></div>
-  						</div>
-					</div>
-    				</div>
-    				<div class="col">
-					<div class="container">
-  						<div class="card">
-    							<div class="card-header"><span>Real Time Bus Tracker</span></div>
-    							<div class="card-body"><a href="https://rbouchard13.github.io/mbta_realtime_tracker" target="_blank"><img src="images/BusTrack.jpg" style="width: 100%; opacity: 1.0;"/></a></div> 
-    							<div class="card-footer"><a href="https://github.com/rbouchard13/mbta_realtime_tracker" target="_blank"><img src="images/git.png" style="width: 30%; opacity: 1.0;" title="View GitHub Repo"/></a></div>
-  						</div>
-					</div>
-    				</div>
-    				<div class="col">
-					<div class="container">
-  						<div class="card">
-    							<div class="card-header"><span>PacMan Factory</span></div>
-    							<div class="card-body"><a href="https://rbouchard13.github.io/pacman_factory" target="_blank"><img src="images/pacman.jpg" style="width: 100%; opacity: 1.0;"/></a></div> 
-    							<div class="card-footer"><a href="https://github.com/rbouchard13/pacman_factory" target="_blank"><img src="images/git.png" style="width: 30%; opacity: 1.0;" title="View GitHub Repo"/></a></div>
-  						</div>
-					</div>
-    				</div>
-    				<div class="col">
-					<div class="container">
-  						<div class="card">
-    							<div class="card-header"><span>Eye Move</span></div>
-    							<div class="card-body"><a href="https://rbouchard13.github.io/eye_move/" target="_blank"><img src="images/eyes.jpg" style="width: 100%; opacity: 1.0;"></a></div>   	
-    							<div class="card-footer"><a href="https://github.com/rbouchard13/eye_move" target="_blank"><img src="images/git.png" style="width: 30%; opacity: 1.0;" title="View GitHub Repo"/></a></div>
-  						</div>
-					</div>
-    				</div>  
-    				<div class="col">
-					<div class="container">
-  						<div class="card">
-    							<div class="card-header"><span>RNG Canon Balls</span></div>
-    							<div class="card-body"><a href="https://rbouchard13.github.io/RNG_Canon_Ball" target="_blank"><img src="images/RNG_canon.jpg" style="width: 100%; opacity: 1.0;"/></div> 
-    							<div class="card-footer"><a href="https://github.com/rbouchard13/RNG_Canon_Ball" target="_blank"><img src="images/git.png" style="width: 30%; opacity: 1.0;" title="View GitHub Repo"/></a></div>
-  						</div>
-					</div>
-    				</div>
-  			</div>
+		<h1>Projects</h1>Click the image to view in browser or to view the GitHub Repository, click the GutHub logo
+		<div class="grid-container">
+  			<div class="grid-item">
+  				<div class="card">
+    					<div class="card-header"><span>Weather Snooper</span></div>
+    					<div class="card-body"><a href="https://rbouchard13.github.io/weather_snooper" target="_blank"><img src="images/weathersnooper.jpg" style="width: 100%; opacity: 1.0;"/></div> 
+    					<div class="card-footer"><a href="https://github.com/rbouchard13/weather_snooper" target="_blank"><img src="images/git.png" style="width: 30%; opacity: 1.0;" title="View GitHub Repo"/></a></div>
+  				</div>
+			</div>
+			<div class="grid-item">
+  				<div class="card">
+    					<div class="card-header"><span>Real Time Bus Tracker</span></div>
+    					<div class="card-body"><a href="https://rbouchard13.github.io/mbta_realtime_tracker" target="_blank"><img src="images/BusTrack.jpg" style="width: 100%; opacity: 1.0;"/></a></div> 
+    					<div class="card-footer"><a href="https://github.com/rbouchard13/mbta_realtime_tracker" target="_blank"><img src="images/git.png" style="width: 30%; opacity: 1.0;" title="View GitHub Repo"/></a></div>
+  				</div>
+			</div>
+			<div class="grid-item">
+  				<div class="card">
+    					<div class="card-header"><span>PacMan Factory</span></div>
+    					<div class="card-body"><a href="https://rbouchard13.github.io/pacman_factory" target="_blank"><img src="images/pacman.jpg" style="width: 100%; opacity: 1.0;"/></a></div> 
+    					<div class="card-footer"><a href="https://github.com/rbouchard13/pacman_factory" target="_blank"><img src="images/git.png" style="width: 30%; opacity: 1.0;" title="View GitHub Repo"/></a></div>
+  				</div>
+			</div>
+			<div class="grid-item">
+  				<div class="card">
+    					<div class="card-header"><span>Eye Move</span></div>
+    					<div class="card-body"><a href="https://rbouchard13.github.io/eye_move/" target="_blank"><img src="images/eyes.jpg" style="width: 100%; opacity: 1.0;"></a></div>   	
+    					<div class="card-footer"><a href="https://github.com/rbouchard13/eye_move" target="_blank"><img src="images/git.png" style="width: 30%; opacity: 1.0;" title="View GitHub Repo"/></a></div>
+  				</div>
+			</div>
+			<div class="grid-item">
+  				<div class="card">
+    					<div class="card-header"><span>RNG Canon Balls</span></div>
+    					<div class="card-body"><a href="https://rbouchard13.github.io/RNG_Canon_Ball" target="_blank"><img src="images/RNG_canon.jpg" style="width: 100%; opacity: 1.0;"/></div> 
+    					<div class="card-footer"><a href="https://github.com/rbouchard13/RNG_Canon_Ball" target="_blank"><img src="images/git.png" style="width: 30%; opacity: 1.0;" title="View GitHub Repo"/></a></div>
+  				</div>
+			</div>
 		</div>
 	</div>
 	<div id="contact" class ="main" onClick="ckMenu()">			
@@ -89,7 +87,7 @@
 					<a href="mailto:snoopprophet@gmail.com"><img src="images/gmail-icon-38470.png" style="width: 30%;" title="Email ME!"/></a>
     				</div>
     				<div class="col">
-					<a href="https://github.com/rbouchard13" target="_blank"><img src="images/github-logo-icon-12.jpg" style="width: 30%;" title="GitHub"/></a>
+					<a href="https://github.com/rbouchard13"><img src="images/github-logo-icon-12.jpg" style="width: 30%;" title="GitHub"/></a>
     				</div>
   			</div>
 		</div>
