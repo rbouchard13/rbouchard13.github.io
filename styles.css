@@ -82,6 +82,8 @@ h1 {
 
 #projects, #contact {
 	display: none;
+	font-family: 'Acme', sans-serif;
+	font-size: 1.1em;
 }
 
 @media screen and (max-height: 450px) {
