@@ -33,6 +33,8 @@ h1 {
 #bio {
 	margin: auto;
 	width: 70%;
+	font-family: 'Acme', sans-serif;
+	font-size: 1.1em;
 }
 
 .sidenav {
