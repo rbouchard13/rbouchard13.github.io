@@ -11,8 +11,7 @@
 	<script src="Port.js"></script>
 </head>
 <body>
-	<img src="images/15720.png" style="background-color: transparent; opacity: 1.0; padding: 20px; cursor: pointer;" onClick='show("main")' title="Go To Home"/>
-	<span style="font-size: 20px;cursor:pointer; padding: 20px; color: #41eb23;" onclick="openNav()">&#9776; Menu</span>
+	<div style="font-size: 20px; cursor:pointer; margin-top: 15px; margin-left: 15px; color: #41eb23;" onclick="openNav()">&#9776; Menu</div>
 	<div id="mySidenav" class="sidenav">
   		<Span class="closebtn" onclick="closeNav()">&times;</span>
 		<span onclick='show("main")'>Home</span>
@@ -21,7 +20,7 @@
 	</div>
 	<div id="main" class="main" onClick="ckMenu()">			
     		<h1>Hello World!</h1>   
-		<div id="bio">
+		<div id="bio">			
 			Welcome to the portfolio! My name is Ryan. To explain why this site exists, you may need some background.......<br><br>
 			There used to be an operating system called Windows 98. This OS thrived around the time I was studying Philosophy in college. For obvious reasons, I needed a device to assist with my studies.
 			So, I got myself a computer! And then it happened............I found the web.......<br><br>
@@ -32,6 +31,7 @@
 			and would love to transition to a full Product Development role. So why are you here and why would you consider me for an opportunity? Because after decades, 
 			I still have just as much passion for the field as I did when I wrote my first Hello World Program!
 		</div>
+		<img src="images/baseBio1.png" style="opacity: 1.0; width: 10%;"/>
 		<div id="medPlayer" class="medPlayer">
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/kXYiU_JCYtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
@@ -75,7 +75,7 @@
   				</div>
 			</div>
 		</div>
-		<div><i>Please note that not all development projects can be shown due to proprietary reasons<i></div>
+		<div><i>Please note that not all development projects can be shown due to proprietary reasons</i></div>
 	</div>
 	<div id="contact" class ="main" onClick="ckMenu()">			
     		<h1>Contact Info</h1>
