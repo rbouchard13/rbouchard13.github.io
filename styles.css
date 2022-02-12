@@ -10,24 +10,15 @@ h1 {
 	font-family: 'Acme', sans-serif;
 }
 
+span.card {
+	display: inline-block;
+	margin: 10px;
+	width: 350px;
+	height: 300px;
+}
+
 .card-header {
 	color: black;
-}
-
-.card-body {
-	height: 150px;
-}
-
-.grid-container {
-  	display: grid;
-  	grid-template-columns: auto auto auto;
-  	padding: 10px;
-	width: 50%;
-	margin:auto;
-}
-.grid-item {
-  	padding: 20px;
-	text-align: center;
 }
 
 #bio {
@@ -86,15 +77,10 @@ h1 {
 	font-size: 1.1em;
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 800px) {
   	.sidenav {padding-top: 15px;}
   	.sidenav a {font-size: 18px;}
 }
-
-.medPlayer {
-	margin-top: 20px;
-}
-
 
 li {
 	text-align: center;
@@ -108,4 +94,15 @@ ul {
 img {
 	opacity: 0.5;
 }
-img:hover {opacity: 1.0;}
+
+img:hover {
+	opacity: 1.0;
+}
+
+.footer {
+  	position: fixed;
+  	left: 0;
+  	bottom: 5%;
+  	width: 100%;
+  	text-align: center;
+}
