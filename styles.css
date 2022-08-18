@@ -21,6 +21,7 @@ span.card {
 	color: black;
 }
 
+
 #bio {
 	margin: auto;
 	width: 70%;
@@ -105,4 +106,14 @@ img:hover {
   	bottom: 5%;
   	width: 100%;
   	text-align: center;
+}
+
+#profileImg {
+	width: 10%;
+}
+
+ @media screen and (max-width: 820px) {
+	#profileImg {
+		width:50%;
+	}
 }
